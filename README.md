@@ -28,6 +28,14 @@ Property Management: Implement AI-driven property management tools that assist i
 Predictive Analytics: AI models use predictive analytics to forecast real estate market trends, aiding users in making informed buying, selling, and holding decisions. <br>
 
 ## AI Algorithm ##
+Property Valuation and Estimation:<br>
+Regression Models: use models such as linear regression or more advanced models like XGBoost, to estimate property values based on historical sales data, property characteristics, location, and market trends.<br>
+Neural Networks: Implement deep learning models like neural networks to capture complex patterns in property valuation, especially for more dynamic markets<br><br>
+Time Series Analysis: <br>
+Employ time series analysis to predict future property values and returns on investment, taking into account historical data and market fluctuations.<br>
+Reinforcement Learning: Use reinforcement learning to optimize investment portfolios by dynamically adjusting the allocation of funds in different properties.<br>
+
+
 
 
 
