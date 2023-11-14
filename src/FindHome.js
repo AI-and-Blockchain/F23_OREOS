@@ -4,7 +4,7 @@ import listingsData from './listings.json';
 
 function FindHome() {
   return (
-    <div className="find-home" style={{ paddingTop: '60px' }} >
+    <div className="find-home" style={{ paddingTop: '80px' }} >
       <h1>Find a Home</h1>
       <ul>
         {listingsData.map((listingData, index) => (

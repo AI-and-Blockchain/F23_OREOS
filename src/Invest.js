@@ -5,7 +5,7 @@ import listingsData from './listings.json';
 
 function Invest() {
   return (
-    <div className="invest" style={{ paddingTop: '60px' }}>
+    <div className="invest" style={{ paddingTop: '80px' }}>
       <h1>Invest</h1>
       <ul>
         {listingsData.map((listingData, index) => (
