@@ -5,6 +5,29 @@
   /* You can set other common styles for the entire app here */
 }
 
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: black;
+  color: white; /* Set text color to white or your preferred color */
+}
+
+ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  border-bottom: 1px solid #ccc; /* Gray border between list items */
+  padding: 10px; /* Add some padding for spacing */
+}
+
+/* Style the last item to remove the border to prevent a line after the last item */
+li:last-child {
+  border-bottom: none;
+}
+
+
 .find-home {
   background-color: black;
   color: white;

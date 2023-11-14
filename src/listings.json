@@ -3,7 +3,8 @@
       "id": 1,
       "streetAddress": "123 Main St",
       "listPrice": 250000,
-      "estimatePrice": 225000
+      "estimatePrice": 315000,
+      "image": "https://cdn-icons-png.flaticon.com/512/5988/5988246.png"
     },
     {
       "id": 2,
@@ -15,7 +16,7 @@
       "id": 3,
       "streetAddress": "789 Pine Ln",
       "listPrice": 185000,
-      "estimatePrice": 166500
+      "estimatePrice": 186500
     },
     {
       "id": 4,
@@ -27,13 +28,13 @@
       "id": 5,
       "streetAddress": "222 Cedar Dr",
       "listPrice": 275000,
-      "estimatePrice": 247500
+      "estimatePrice": 287500
     },
     {
       "id": 6,
       "streetAddress": "333 Birch Ct",
       "listPrice": 150000,
-      "estimatePrice": 135000
+      "estimatePrice": 154000
     },
     {
       "id": 7,
@@ -45,7 +46,7 @@
       "id": 8,
       "streetAddress": "555 Walnut St",
       "listPrice": 200000,
-      "estimatePrice": 180000
+      "estimatePrice": 515000
     },
     {
       "id": 9,
@@ -57,7 +58,7 @@
       "id": 10,
       "streetAddress": "777 Acorn Ave",
       "listPrice": 360000,
-      "estimatePrice": 324000
+      "estimatePrice": 363000
     }
   ]
   

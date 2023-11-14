@@ -1,16 +1,15 @@
+// Invest.js
 import React from 'react';
+import InvestListing from './InvestListing'; // Import the InvestListing component
 import listingsData from './listings.json';
 
 function Invest() {
   return (
-    <div className="invest">
+    <div className="invest" style={{ paddingTop: '60px' }}>
       <h1>Invest</h1>
       <ul>
         {listingsData.map((listingData, index) => (
-          <li key={index}>
-          <p>Address: {listingData.streetAddress}</p>
-          <p>List Price: ${listingData.listPrice}</p>
-        </li>
+          <InvestListing key={index} listingData={listingData} />
         ))}
       </ul>
     </div>
