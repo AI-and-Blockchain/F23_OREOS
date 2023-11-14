@@ -1,15 +1,16 @@
 import React from 'react';
+import listingsData from './listings.json';
 
-function Invest({ properties }) {
+function Invest() {
   return (
     <div className="invest">
       <h1>Invest</h1>
       <ul>
-        {properties.map((property, index) => (
+        {listingsData.map((listingData, index) => (
           <li key={index}>
-            <img src={property.image} alt={`Property ${index}`} />
-            <p>Share Cost: ${property.shareCost}</p>
-          </li>
+          <p>Address: {listingData.streetAddress}</p>
+          <p>List Price: ${listingData.listPrice}</p>
+        </li>
         ))}
       </ul>
     </div>

@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "streetAddress": "123 Main St",
+      "listPrice": 250000,
+      "estimatePrice": 225000
+    },
+    {
+      "id": 2,
+      "streetAddress": "456 Oak Ave",
+      "listPrice": 320000,
+      "estimatePrice": 288000
+    },
+    {
+      "id": 3,
+      "streetAddress": "789 Pine Ln",
+      "listPrice": 185000,
+      "estimatePrice": 166500
+    },
+    {
+      "id": 4,
+      "streetAddress": "101 Elm Blvd",
+      "listPrice": 420000,
+      "estimatePrice": 378000
+    },
+    {
+      "id": 5,
+      "streetAddress": "222 Cedar Dr",
+      "listPrice": 275000,
+      "estimatePrice": 247500
+    },
+    {
+      "id": 6,
+      "streetAddress": "333 Birch Ct",
+      "listPrice": 150000,
+      "estimatePrice": 135000
+    },
+    {
+      "id": 7,
+      "streetAddress": "444 Maple Rd",
+      "listPrice": 390000,
+      "estimatePrice": 351000
+    },
+    {
+      "id": 8,
+      "streetAddress": "555 Walnut St",
+      "listPrice": 200000,
+      "estimatePrice": 180000
+    },
+    {
+      "id": 9,
+      "streetAddress": "666 Pinecone Ln",
+      "listPrice": 310000,
+      "estimatePrice": 279000
+    },
+    {
+      "id": 10,
+      "streetAddress": "777 Acorn Ave",
+      "listPrice": 360000,
+      "estimatePrice": 324000
+    }
+  ]
+  

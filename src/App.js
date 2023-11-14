@@ -1,23 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FindHome from './findhome';
+import { Route, Routes } from 'react-router-dom';
+import FindHome from './FindHome';
 import Invest from './Invest';
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import './App.css'; // Import your CSS file
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <Sidebar />
-        <Switch>
-          <Route path="/find-home" component={FindHome} />
-          <Route path="/invest" component={Invest} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="app">
+      <Navbar />
+      <Sidebar />
+      <Routes>
+        <Route path="/find-home" element={<FindHome />} />
+        <Route path="/invest" element={<Invest />} />
+      </Routes>
+    </div>
   );
 }
 
