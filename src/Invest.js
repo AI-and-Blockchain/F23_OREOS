@@ -7,8 +7,8 @@ function Invest() {
 
   const sortedListings = [...listingsData].sort((a, b) => {
     // Change 'listPrice' to the property you want to sort by
-    const priceA = a.listPrice;
-    const priceB = b.listPrice;
+    const priceA = a.list_price;
+    const priceB = b.list_price;
 
     if (sortOrder === 'original') return a.id - b.id; // Sort by the original listing id order
 

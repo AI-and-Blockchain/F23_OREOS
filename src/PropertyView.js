@@ -18,10 +18,10 @@ function PropertyView() {
   return (
     <div style={{ position: 'absolute', top: '60px', left: 0, right: 0, margin: '20px' }}>
       <h2>Property Details</h2>
-      <img src={listingData.image} alt="Property" style={{ width: '700px', height: '450px' }} />
-      <p>Address: {listingData.streetAddress}</p>
-      <p>List Price: ${listingData.listPrice}</p>
-      <p>Estimated Price: ${listingData.estimatePrice}</p>
+      <img src={listingData.primary_photo.href} alt="Property" style={{ width: '400px', height: '280px' }} />
+      <p>Address: {listingData.location.address.line}</p>
+      <p>List Price: ${listingData.list_price}</p>
+      <p>Estimated Price: ${listingData.description.sold_price}</p>
     </div>
   );
 }

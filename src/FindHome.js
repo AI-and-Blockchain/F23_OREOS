@@ -15,11 +15,11 @@ function FindHome() {
 
   // Sort the listings based on the difference between estimatePrice and listPrice
   const sortedListings = [...listingsData].sort((a, b) => {
-    if (sortOrder === 'original') return a.id - b.id; // Sort by the original listing id order
+    if (sortOrder === 'original') return a.property_id - b.property_id; // Sort by the original listing id order
     const orderFactor = sortOrder === 'asc' ? 1 : -1;
-    const differenceA = a.estimatePrice - a.listPrice;
-    const differenceB = b.estimatePrice - b.listPrice;
-    return orderFactor * (differenceA - differenceB);
+    const differenceA = a.list_price;
+    const differenceB = b.list_price;
+    return orderFactor * (differenceB - differenceA);
   });
 
   return (

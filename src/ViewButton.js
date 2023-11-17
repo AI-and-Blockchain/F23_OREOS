@@ -5,7 +5,6 @@ function ViewButton({ listingData }) {
   const navigate = useNavigate();
   
   const handleClick = () => {
-    console.log("Listingdata: ", listingData);
     navigate(`/property-view/${listingData.id}`, { state: { listingData } });
   };
 
