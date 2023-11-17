@@ -128,6 +128,22 @@ li:last-child {
   color: #61dafb;
 }
 
+
+.view-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 8px 16px; /* Adjust padding as needed */
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-button:hover {
+  background-color: black;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

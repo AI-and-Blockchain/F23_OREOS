@@ -4,43 +4,49 @@
       "streetAddress": "123 Main St",
       "listPrice": 250000,
       "estimatePrice": 315000,
-      "image": "https://cdn-icons-png.flaticon.com/512/5988/5988246.png"
+      "image": "https://ap.rdcpix.com/8fc225856d69358784457d2bb50e7050l-m2851699110od-w1024_h768_x2.webp"
     },
     {
       "id": 2,
       "streetAddress": "456 Oak Ave",
       "listPrice": 320000,
-      "estimatePrice": 288000
+      "estimatePrice": 288000,
+      "image":"https://ap.rdcpix.com/26081fe361c1b83863e394670192a0eal-m3305215882od-w1024_h768_x2.webp"
     },
     {
       "id": 3,
       "streetAddress": "789 Pine Ln",
-      "listPrice": 185000,
-      "estimatePrice": 186500
+      "listPrice": 1850000,
+      "estimatePrice": 1815000,
+      "image": "https://ap.rdcpix.com/97914d789a50ac608198ff7bf5fee42dl-m4187379476od-w480_h360_x2.webp?w=828&q=75"
     },
     {
       "id": 4,
       "streetAddress": "101 Elm Blvd",
       "listPrice": 420000,
-      "estimatePrice": 378000
+      "estimatePrice": 378000,
+      "image": "https://ap.rdcpix.com/34bd7d6021e3a606586b73f1d9462b27l-m1612280028od-w1024_h768_x2.webp"
     },
     {
       "id": 5,
       "streetAddress": "222 Cedar Dr",
       "listPrice": 275000,
-      "estimatePrice": 287500
+      "estimatePrice": 287500,
+      "image": "https://ap.rdcpix.com/d1d51e2b7b01985afb5b2c235af617e0l-m2398179345od-w1024_h768_x2.webp"
     },
     {
       "id": 6,
       "streetAddress": "333 Birch Ct",
       "listPrice": 150000,
-      "estimatePrice": 154000
+      "estimatePrice": 154000,
+      "image": "https://ap.rdcpix.com/453b457c7d68c2dc733d77b9b0c5d82cl-m3792809205od-w1024_h768_x2.webp"
     },
     {
       "id": 7,
       "streetAddress": "444 Maple Rd",
       "listPrice": 390000,
-      "estimatePrice": 351000
+      "estimatePrice": 351000,
+      "image": "https://ap.rdcpix.com/af040ccd73f676f8e3c6fddf95d0b123l-m2268691576od-w1024_h768_x2.webp"
     },
     {
       "id": 8,
@@ -52,13 +58,15 @@
       "id": 9,
       "streetAddress": "666 Pinecone Ln",
       "listPrice": 310000,
-      "estimatePrice": 279000
+      "estimatePrice": 279000,
+      "image":"https://ap.rdcpix.com/61fec8f445120349a1fa483ba4265b34l-m227637141od-w1024_h768_x2.webp"
     },
     {
       "id": 10,
       "streetAddress": "777 Acorn Ave",
       "listPrice": 360000,
-      "estimatePrice": 363000
+      "estimatePrice": 363000,
+      "image": "https://ap.rdcpix.com/405a016963a02134335a5061d4498512l-b320880014od-w1024_h768_x2.webp"
     }
   ]
   
