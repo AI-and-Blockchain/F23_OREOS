@@ -37,12 +37,12 @@ function Navbar({ onToggleSidebar }) {
         </div>
         <div className="navbar-menu" style={{ display: 'flex' }}>
           <Link to="/find-home" className="navbar-menu-item">
-            <img src={FindHomeIcon} alt="Find Home" style={{ width: '86px', height: '60px', marginBottom: '5px' }} />
+            <img src={FindHomeIcon} alt="Find Home" style={{ width: '100px', height: '60px', marginBottom: '5px',marginRight: '-20px' }} />
             <p style={{ margin: '0', fontSize: '14px', paddingRight: '5px' }}>Find a Home</p>
           </Link>
           <Link to="/invest" className="navbar-menu-item">
-            <img src={InvestIcon} alt="Invest" style={{ width: '86px', height: '60px', marginBottom: '5px', paddingRight: '50px' }} />
-            <p style={{ margin: '0', fontSize: '14px', paddingLeft: '20px' }}>Invest</p>
+            <img src={InvestIcon} alt="Invest" style={{ width: '100px', height: '60px', marginBottom: '5px', marginLeft: '-5px' , paddingRight: '50px' }} />
+            <p style={{ margin: '0', fontSize: '14px', paddingLeft: '43px' }}>Invest</p>
           </Link>
         </div>
       </nav>
