@@ -10,11 +10,11 @@ function Navbar() {
       <div className="navbar-menu" style={{ display: 'flex' }}>
         <Link to="/find-home" className="navbar-menu-item" style={{ margin: '0px', textAlign: 'left', textDecoration: 'none', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <img src={FindHomeIcon} alt="Find Home" style={{ width: '86px', height: '60px', marginBottom: '5px' }} />
-          <p style={{ margin: '0', fontSize: '14px' }}>Find a Home</p>
+          <p style={{ margin: '0', fontSize: '14px' , paddingRight: '5px'}}>Find a Home</p>
         </Link>
         <Link to="/invest" className="navbar-menu-item" style={{ margin: '0px', textAlign: 'center', textDecoration: 'none', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={InvestIcon} alt="Invest" style={{ width: '86px', height: '60px', marginBottom: '5px' }} />
-          <p style={{ margin: '0', fontSize: '14px' }}>Invest</p>
+          <img src={InvestIcon} alt="Invest" style={{ width: '86px', height: '60px', marginBottom: '5px' , paddingRight: '50px'}} />
+          <p style={{ margin: '0', fontSize: '14px' ,paddingRight: '20px'}}>Invest</p>
         </Link>
       </div>
     </nav>

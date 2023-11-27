@@ -39,7 +39,7 @@ function Invest() {
           cursor: 'pointer',
         }}
       >
-        {`Sort by List Price: ${sortOrder === 'asc' ? 'Low to High' : sortOrder === 'desc' ? 'High to Low' : 'Original Order'}`}
+        {`Sort by List Price: ${sortOrder === 'asc' ? 'Low to High' : sortOrder === 'desc' ? 'High to Low' : 'None'}`}
       </button>
       <ul>
         {sortedListings.map((listingData, index) => (
