@@ -65,42 +65,33 @@ li:last-child {
 
 .sidebar {
   position: fixed;
-  top: 50%;
-  right: -50px;
-  transform: translateY(-50%);
-  width: 50px;
+  top: 0;
+  left: 50%; /* Move the sidebar off-screen initially */
+  width: 25%;
   height: 100%;
-  background-color: black;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   z-index: 1;
-  transition: right 0.3s;
+  transition: left 0.3s;
 }
 
 .sidebar.open {
-  right: 0;
+  left: 0;
 }
 
 .sidebar-toggle {
   font-size: 24px;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
-.sidebar-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.sidebar-content {
   margin-top: 20px;
 }
 
-.sidebar-icons a {
-  text-decoration: none;
-  color: white;
-  margin-bottom: 10px;
-}
 
 .App-logo {
   height: 40vmin;

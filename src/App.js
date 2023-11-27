@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import FindHome from './FindHome';
 import Invest from './Invest';
@@ -8,10 +8,17 @@ import PropertyView from './PropertyView';
 import './App.css'; // Import your CSS file
 
 function App() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    console.log('Sidebar button clicked');
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="app">
-      <Navbar />
-      <Sidebar />
+      <Navbar onToggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       <Routes>
         <Route path="/find-home" element={<FindHome />} />
         <Route path="/invest" element={<Invest />} />

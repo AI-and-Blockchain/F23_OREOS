@@ -16,7 +16,7 @@ function PropertyView() {
   const listingData = state.listingData;
 
   return (
-    <div style={{ position: 'absolute', top: '60px', left: 0, right: 0, margin: '20px' }}>
+    <div  style={{ marginTop: '0px', padding: '100px' }}>
       <h2>Property Details</h2>
       <img src={listingData.primary_photo.href} alt="Property" style={{ width: '400px', height: '280px' }} />
       <p style={{ fontSize: '28px', fontWeight: 'bold', margin: '0' }}>Address: {listingData.location.address.line}</p>

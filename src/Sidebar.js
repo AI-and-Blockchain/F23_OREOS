@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
+import './App.css'; // Import your CSS file
 
-function Sidebar() {
+function Sidebar({ onClose }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    onClose(); // Close the sidebar when an option is selected
+  };
+
+  const sidebarStyle = {
+    left: sidebarOpen ? '0' : '-25%', // Adjust the left position based on sidebarOpen state
   };
 
   return (
-    <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+    <div className={`sidebar ${sidebarOpen ? 'open' : ''}`} style={sidebarStyle}>
       <div className="sidebar-toggle" onClick={toggleSidebar}>
-        ☰
+        <FaBars />
       </div>
-      <div className="sidebar-icons">
-        <Link to="/find-home">
-          <i className="fa fa-home"></i>
-        </Link>
-        <Link to="/invest">
-          <i className="fa fa-money"></i>
-        </Link>
-      </div>
+      {sidebarOpen && (
+        <div className="sidebar-content">
+          {/* Add your login options or any other content here */}
+          <p>Login</p>
+        </div>
+      )}
     </div>
   );
 }
