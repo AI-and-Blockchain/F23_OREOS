@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+OREOS Real Estate App
+OREOS is a user-friendly real estate web application built with React.js. It simplifies the process of finding your dream home and exploring potential investment opportunities in the real estate market.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Find a Home Page
+The "Find a Home" page is designed to help users discover available homes with ease. Key features include:
 
-## Available Scripts
+Property Listings: Browse through a curated list of available homes with detailed information.
+Price Estimations: Get estimated prices for each property based on various factors.
+Invest Page
+The "Invest" page caters to users interested in real estate investment opportunities. Notable features include:
 
-In the project directory, you can run:
+Investment Listings: Explore a list of properties suitable for investment, complete with relevant details.
+Sort Functionality: Sort listings by list price, providing flexibility in decision-making.
+Property View
+The "Property View" component offers an in-depth look at a specific property. Features include:
 
-### `npm start`
+Comprehensive Details: Access detailed information such as address, list price, and estimated price.
+Visual Representation: View property images for a better understanding.
+Navigation: Easily navigate back to the list or explore other properties.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install
+npm start
 
-### `npm test`
+File Structure
+The project structure is organized as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+plaintext
+Copy code
+oreos-real-estate-app/
+|-- public/
+|-- src/
+|   |-- components/
+|       |-- FindHome.js
+|       |-- Invest.js
+|       |-- Listing.js
+|       |-- PropertyView.js
+|       |-- Navbar.js
+|       |-- ViewButton.js
+|   |-- images/
+|   |-- App.js
+|   |-- index.js
+|-- .gitignore
+|-- package.json
+|-- README.md
+public: Contains the HTML template and other public assets.
+src/components: Houses React components for different sections of the app.
+src/images: Stores image assets.
+App.js: The main component that renders other components.
+index.js: Initializes the React app.
+Dependencies
+React: ^17.0.2
+React Router DOM: ^5.2.0
+Other dependencies specified in package.json
+Install additional dependencies using:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+bash
+Copy code
+npm install <package-name>
+Contributing
+Fork the repository.
+Create a new branch: git checkout -b feature/new-feature.
+Make your changes and commit: git commit -m 'Add new feature'.
+Push to the branch: git push origin feature/new-feature.
+Submit a pull request.
