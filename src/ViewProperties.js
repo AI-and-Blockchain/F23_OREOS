@@ -3,15 +3,18 @@ import { useMetamask } from './MetaContext';
 import './App.css';
 
 function ViewProperties() {
+  const { connectedAccount } = useMetamask();
   const [ownedProperties, setOwnedProperties] = useState([]);
   const [investedProperties, setInvestedProperties] = useState([]);
 
   // Fetch data or update state related to user's properties
   useEffect(() => {
-    // Add logic to fetch or update properties data based on the user's account
-    // For example, you might fetch data from a backend server or blockchain
-    // and update the state with setOwnedProperties and setInvestedProperties
-  }, []);
+    if (connectedAccount) {
+        // Add logic to fetch or update properties data based on the connected account
+        // For example, you might fetch data from a backend server or blockchain
+        // and update the state with setOwnedProperties and setInvestedProperties
+      }
+    }, [connectedAccount]);
 
   const hasOwnedProperties = ownedProperties.length > 0;
 

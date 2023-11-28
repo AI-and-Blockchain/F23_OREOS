@@ -1,6 +1,18 @@
 OREOS Real Estate App
 OREOS is a user-friendly real estate web application built with React.js. It simplifies the process of finding your dream home and exploring potential investment opportunities in the real estate market.
 
+How to run:
+    pull reat-js branch from github:
+    https://github.com/AI-and-Blockchain/F23_OREOS/tree/react-js
+    
+    Download into folder, navigate to the root, and start to Install dependencies:
+    npm install
+
+    Run react-js localhost:
+    npm start
+
+    Open web browser and use OREO'S GUI
+
 Find a Home Page
 The "Find a Home" page is designed to help users discover available homes with ease. Key features include:
 
@@ -18,10 +30,6 @@ Comprehensive Details: Access detailed information such as address, list price, 
 Visual Representation: View property images for a better understanding.
 Navigation: Easily navigate back to the list or explore other properties.
 
-Install dependencies:
-
-npm install
-npm start
 
 File Structure
 The project structure is organized as follows:

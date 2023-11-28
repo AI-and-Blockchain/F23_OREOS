@@ -5,7 +5,17 @@ import listingsData from './listings.json';
 function Invest() {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
 
-  const sortedListings = [...listingsData].sort((a, b) => {
+  const uniqueAddresses = new Set();
+
+  const filteredListings = listingsData.filter((listing) => {
+    if (!uniqueAddresses.has(listing.location.address.line)) {
+      uniqueAddresses.add(listing.location.address.line);
+      return true;
+    }
+    return false;
+  });
+
+  const sortedListings = [...filteredListings].sort((a, b) => {
     // Change 'listPrice' to the property you want to sort by
     const priceA = a.list_price;
     const priceB = b.list_price;
