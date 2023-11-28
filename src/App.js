@@ -4,7 +4,9 @@ import FindHome from './FindHome';
 import Invest from './Invest';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import ViewProperties from './ViewProperties'; 
 import PropertyView from './PropertyView';
+import { MetamaskProvider } from './MetaContext';
 import './App.css'; // Import your CSS file
 
 function App() {
@@ -12,10 +14,10 @@ function App() {
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
   };
 
   return (
+    <MetamaskProvider>
     <div className="app">
       <Navbar onToggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} onToggleSidebar={toggleSidebar} />
@@ -26,6 +28,7 @@ function App() {
             path="/property-view/:listingData"
             element={<PropertyView />}
          />
+        <Route path="/view-properties" element={<ViewProperties />} />
         {/* Add the default route to navigate to /find-home */}
         <Route
           path="/"
@@ -33,6 +36,7 @@ function App() {
         />
       </Routes>
     </div>
+    </MetamaskProvider>
   );
 }
 
