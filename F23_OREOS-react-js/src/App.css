@@ -1,0 +1,170 @@
+.App {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  /* You can set other common styles for the entire app here */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: black;
+  color: white; /* Set text color to white or your preferred color */
+}
+
+ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  border-bottom: 1px solid #ccc; /* Gray border between list items */
+  padding: 10px; /* Add some padding for spacing */
+}
+
+/* Style the last item to remove the border to prevent a line after the last item */
+li:last-child {
+  border-bottom: none;
+}
+
+
+.find-home {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  /* Add more styles specific to the FindHome component */
+}
+
+.invest {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  /* Add more styles specific to the Invest component */
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 24px;
+  /* Add more styles specific to the Navbar component */
+}
+
+.navbar-menu {
+  display: flex;
+}
+
+.navbar-menu-item {
+  margin-right: 20px;
+  cursor: pointer;
+  /* Add more styles specific to the menu items */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 50%; /* Move the sidebar off-screen initially */
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  z-index: 1;
+  transition: left 0.3s;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-toggle {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  margin-top: 20px;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a {
+  text-decoration: none;
+}
+
+.view-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 8px 16px; /* Adjust padding as needed */
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.shared-button-style{
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.metamask-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  margin-top: 50px; /* Half of the height to center the logo */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
