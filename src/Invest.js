@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InvestListing from './InvestListing'; // Import the InvestListing component
 import listingsData from './listings.json';
+import Predict from './predict.js';
 
 function Invest() {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
@@ -38,8 +39,9 @@ function Invest() {
   };
 
   return (
-    <div className="invest" style={{ paddingTop: '80px' }}>
+    <div className='invest' style={{ paddingTop: '80px' }}>
       <h1>Invest</h1>
+      <Predict />
       <button
         onClick={toggleSortOrder}
         style={{
@@ -49,7 +51,13 @@ function Invest() {
           cursor: 'pointer',
         }}
       >
-        {`Sort by List Price: ${sortOrder === 'asc' ? 'Low to High' : sortOrder === 'desc' ? 'High to Low' : 'None'}`}
+        {`Sort by List Price: ${
+          sortOrder === 'asc'
+            ? 'Low to High'
+            : sortOrder === 'desc'
+            ? 'High to Low'
+            : 'None'
+        }`}
       </button>
       <ul>
         {sortedListings.map((listingData, index) => (
@@ -57,7 +65,7 @@ function Invest() {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 export default Invest;
