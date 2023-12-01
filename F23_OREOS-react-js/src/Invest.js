@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InvestListing from './InvestListing'; // Import the InvestListing component
 import listingsData from './listings.json';
-import Predict from './predict.js';
+import Predict from '../backend/predict.js';
 
 function Invest() {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
