@@ -10,6 +10,10 @@ contract RealEstateToken is ERC20 {
     uint256 public totalProperties;
     uint256 public totalAuctions;
 
+    event PropertyAuctionStarted(address indexed propertyOwner, uint256 propertyId);
+    event AuctionEnded(address indexed propertyOwner, uint256 propertyId, address indexed highestBidder, uint256 highestBid);
+    event PropertyOwnershipTransferred(uint256 propertyId, address indexed previousOwner, address indexed newOwner);
+
     struct Property {
         address owner;
         uint256 sharesAvailable;
@@ -59,6 +63,15 @@ function addProperty(uint256 _listPrice, uint256 _estimatedPrice, uint256 _initi
     newProperty.isPublic = _isPublic;
     newProperty.isAuctioned = false;
 }
+    // function demonstrating access control with onlyOwner modifier
+    function updatePropertyDetails(uint256 _propertyId, uint256 _newListPrice, uint256 _newEstimatedPrice) public onlyOwner {
+        // Perform sensitive operations or update property details
+        properties[_propertyId].listPrice = _newListPrice;
+        properties[_propertyId].estimatedPrice = _newEstimatedPrice;
+        
+        // Emit an event or perform other necessary actions
+    }
+
 
     function startAuction(uint256 _propertyId) public {
         require(properties[_propertyId].owner == msg.sender, "Only the property owner can start an auction");
@@ -73,6 +86,9 @@ function addProperty(uint256 _listPrice, uint256 _estimatedPrice, uint256 _initi
         });
 
         properties[_propertyId].isAuctioned = true;
+        
+        emit PropertyAuctionStarted(msg.sender, _propertyId);
+
     }
 
     function placeBid(uint256 _auctionId) external payable {
@@ -96,7 +112,21 @@ function addProperty(uint256 _listPrice, uint256 _estimatedPrice, uint256 _initi
         properties[auctions[_auctionId].propertyId].isAuctioned = false;
 
         _transfer(owner, auctions[_auctionId].highestBidder, properties[auctions[_auctionId].propertyId].investorShares[auctions[_auctionId].highestBidder]);
-    }
+
+  emit AuctionEnded(
+            msg.sender,
+            auctions[_auctionId].propertyId,
+            auctions[_auctionId].highestBidder,
+            auctions[_auctionId].highestBid
+        );
+
+        emit PropertyOwnershipTransferred(
+            auctions[_auctionId].propertyId,
+            msg.sender,
+            auctions[_auctionId].highestBidder
+        );
+    }    
+    
 
     function buyShares(uint256 _propertyId, uint256 _numShares) external payable {
         require(_numShares > 0, "Number of shares must be greater than zero");
