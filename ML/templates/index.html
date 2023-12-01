@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask + ML App</title>
+</head>
+<body>
+    <h1>Flask + ML App</h1>
+    
+    <form id="predictionForm">
+        <label for="beds">Beds:</label>
+        <input type="number" id="beds" name="beds" value="6"><br>
+        
+        <label for="baths">Baths:</label>
+        <input type="number" id="baths" name="baths" value="2"><br>
+        
+        <label for="lot_sqft">Lot Sqft:</label>
+        <input type="number" id="lot_sqft" name="lot_sqft" value="5000"><br>
+        
+        <label for="sqft">Sqft:</label>
+        <input type="number" id="sqft" name="sqft" value="900"><br>
+        
+        <label for="list_price">List Price:</label>
+        <input type="number" id="list_price" name="list_price" value="100000"><br>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" value="New York"><br>
+        
+        <label for="county">County:</label>
+        <input type="text" id="county" name="county" value="Rensselaer"><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="Troy"><br>
+        
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+
+    <script>
+        function predict() {
+            // Get form data
+            const formData = {
+                'description_beds': [document.getElementById('beds').value],
+                'description_baths_consolidated': [document.getElementById('baths').value],
+                'description_lot_sqft': [document.getElementById('lot_sqft').value],
+                'description_sqft': [document.getElementById('sqft').value],
+                'list_price': [document.getElementById('list_price').value],
+                'location_address_state': [document.getElementById('state').value],
+                'location_county_name': [document.getElementById('county').value],
+                'location_address_city': [document.getElementById('city').value]
+            };
+
+            // Make AJAX request to /predict endpoint
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Predicted Price:', data.predictions);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

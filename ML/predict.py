@@ -6,6 +6,9 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import make_column_selector
 from sklearn.compose import make_column_transformer
 from sklearn.pipeline import make_pipeline
+from flask import Flask, jsonify, request, render_template
+
+app = Flask(__name__)
 
 df = pd.read_csv('Troy_Housing.csv')
 
@@ -26,20 +29,37 @@ preprocessor = make_column_transformer(
 model = make_pipeline(preprocessor, LinearRegression())
 model.fit(X_train, y_train)
 
-y_pred = model.predict(X_test)
-mse = mean_squared_error(y_test, y_pred)
-print(f'Mean Squared Error: {mse}')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-new_data = pd.DataFrame({
-    'description_beds': [4],
-    'description_baths_consolidated': [2],
-    'description_lot_sqft': [1307],
-    'description_sqft': [49000],
-    'list_price': [100000],
-    'location_address_state': ['New York'],
-    'location_county_name': ['Rensselaer'],
-    'location_address_city': ['Troy']
-})
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        input_data = request.get_json()
+        input_df = pd.DataFrame(input_data)
+        predictions = model.predict(input_df)
+        return jsonify({'predictions': predictions[0].tolist()})
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
-predicted_price = model.predict(new_data)
-print(f'Predicted Price: {predicted_price[0]}')
+if __name__ == '__main__':
+    app.run(debug=True)
+
+# y_pred = model.predict(X_test)
+# mse = mean_squared_error(y_test, y_pred)
+# print(f'Mean Squared Error: {mse}')
+
+# new_data = pd.DataFrame({
+#     'description_beds': [6],
+#     'description_baths_consolidated': [2],
+#     'description_lot_sqft': [5000],
+#     'description_sqft': [900],
+#     'list_price': [100000],
+#     'location_address_state': ['New York'],
+#     'location_county_name': ['Rensselaer'],
+#     'location_address_city': ['Troy']
+# })
+
+# predicted_price = model.predict(new_data)
+# print(f'Predicted Price: {predicted_price[0]}')
