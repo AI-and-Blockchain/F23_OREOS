@@ -5,6 +5,7 @@ import Invest from './Invest';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import ViewProperties from './ViewProperties'; 
+import HomeEvaluationForm from './HomeEvaluationForm'; 
 import PropertyView from './PropertyView';
 import { MetamaskProvider } from './MetaContext';
 import './App.css'; // Import your CSS file
@@ -22,6 +23,7 @@ function App() {
       <Navbar onToggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} onToggleSidebar={toggleSidebar} />
       <Routes>
+        <Route path="/home-evaluation" element={<HomeEvaluationForm />} />
         <Route path="/find-home" element={<FindHome />} />
         <Route path="/invest" element={<Invest />} />
         <Route

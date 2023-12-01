@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FindHomeIcon from './findhome.png';
 import InvestIcon from './invest.png';
 import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
+import './App.css'; // Import your CSS file
 
 function Navbar({ onToggleSidebar }) {
   return (
@@ -34,22 +35,29 @@ function Navbar({ onToggleSidebar }) {
             <FaBars />
           </div>
           <div style={{ fontSize: '36px', fontWeight: 'bold' }}>OREOS</div>
+          {/* New button for Home Evaluation Form */}
+          <Link to="/home-evaluation" style={{ marginLeft: '20px', textDecoration: 'none', color: 'white' }}>
+            <button style={{
+                  fontWeight: 'bold',
+                  padding: '8px 16px', // Add horizontal padding for a pill shape
+                  borderRadius: '20px', // Add border radius for a pill shape
+                  cursor: 'pointer',
+                }} >
+              Evaluate Home
+            </button>
+          </Link>
         </div>
         <div className="navbar-menu" style={{ display: 'flex' }}>
           <Link to="/find-home" className="navbar-menu-item">
-            <img src={FindHomeIcon} alt="Find Home" style={{ width: '100px', height: '60px', marginBottom: '5px',marginRight: '-20px' }} />
+            <img src={FindHomeIcon} alt="Find Home" style={{ width: '100px', height: '60px', marginBottom: '5px', marginRight: '-20px' }} />
             <p style={{ margin: '0', fontSize: '14px', paddingRight: '5px' }}>Find a Home</p>
           </Link>
           <Link to="/invest" className="navbar-menu-item">
-            <img src={InvestIcon} alt="Invest" style={{ width: '100px', height: '60px', marginBottom: '5px', marginLeft: '-5px' , paddingRight: '50px' }} />
+            <img src={InvestIcon} alt="Invest" style={{ width: '100px', height: '60px', marginBottom: '5px', marginLeft: '-5px', paddingRight: '50px' }} />
             <p style={{ margin: '0', fontSize: '14px', paddingLeft: '43px' }}>Invest</p>
           </Link>
         </div>
       </nav>
-      <div onClick={onToggleSidebar} style={{ cursor: 'pointer', fontSize: '24px', fontWeight: 'bold', marginRight: '20px' }}>
-      <FaBars />
-    </div>
-
     </div>
   );
 }
