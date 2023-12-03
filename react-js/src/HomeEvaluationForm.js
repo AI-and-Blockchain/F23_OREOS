@@ -193,5 +193,18 @@ const HomeEvaluationForm = () => {
   );
 };
 
+
+function getPredictedPriceColor(listPrice, predictedPrice) {
+  const difference = predictedPrice - listPrice;
+
+  if (Math.abs(difference) <= 5000) {
+    return 'yellow';
+  } else if (difference > 0) {
+    return 'green';
+  } else {
+    return 'red';
+  }
+}
+
 export default HomeEvaluationForm;
 

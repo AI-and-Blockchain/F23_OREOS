@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InvestListing from './InvestListing'; // Import the InvestListing component
-import listingsData from './investListings.json';
 
 function Invest() {
-  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
+  const [allProperties, setAllProperties] = useState([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const tempProps = await fetchInvestListings();
+      setAllProperties(tempProps);
+    };
 
+    fetchData(); // Call the fetchData function
+
+  }, []);
+
+  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
   const uniqueAddresses = new Set();
-  const allProperties =  fetchInvestListings();
   console.log(allProperties);
-  const filteredListings = listingsData.filter((listing) => {
+  const filteredListings = allProperties.filter((listing) => {
     if (!uniqueAddresses.has(listing.details.address)) {
       uniqueAddresses.add(listing.details.address);
       return true;
@@ -69,12 +78,19 @@ const fetchInvestListings = async () => {
     // Parse JSON data
     const jsonData = JSON.parse(investListingsData);
 
-    // Return the data if available, otherwise an empty array
-    return jsonData || [];
+    // Check if the parsed data is an array
+    if (Array.isArray(jsonData)) {
+      return jsonData;
+    } else {
+      // If not an array, return an empty array
+      console.error('InvestListings data is not an array:', jsonData);
+      return [];
+    }
   } catch (error) {
     console.error('Error fetching investListings data:', error);
     return [];
   }
 };
+
 
 export default Invest;
