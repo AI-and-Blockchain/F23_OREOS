@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMetamask } from './MetaContext';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 function ViewProperties() {
@@ -36,7 +37,11 @@ function ViewProperties() {
           // Show a message and "Add Property" button if no owned properties
           <div>
             <p>You don't have any owned properties.</p>
-            <button className="shared-button-style">Add Property</button>
+            <Link to="/home-evaluation" style={{ marginLeft: '20px', textDecoration: 'none', color: 'white' }}>
+            <button className="shared-button-style">
+              Add Property
+            </button>
+          </Link>
           </div>
         )}
       </div>

@@ -65,12 +65,14 @@ function Sidebar({ onClose, onToggleSidebar, isOpen }) {
         <div className="sidebar-content">
           <p>Login</p>
           {isMetamaskConnected ? (
-            <Link to="/view-properties" className="shared-button-style">
-              <span>View Properties</span>
+            <Link to="/view-properties" >
+              <button className="shared-button-style" onClick={() => { connectToMetamask(); toggleSidebar(); }} >
+              View Properties
               <img src={MetamaskLogo2} alt="Metamask" className="metamask-logo" />
+              </button>
             </Link>
           ) : (
-            <button className="shared-button-style" onClick={connectToMetamask}>
+            <button className="shared-button-style" onClick={() => { connectToMetamask(); toggleSidebar(); }} >
               <span>Connect to Metamask</span>
               <img src={MetamaskLogo} alt="Metamask" className="metamask-logo" />
             </button>

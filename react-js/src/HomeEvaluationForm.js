@@ -52,7 +52,7 @@ const HomeEvaluationForm = () => {
   };
 
   return (
-    <div style={{ paddingTop: '80px', display: 'flex' }}>
+    <div style={{ paddingTop: '80px',paddingLeft: '30px', display: 'flex' }}>
       <div style={{ flex: 1, marginRight: '20px' }}>
         <h2>Home Evaluation</h2>
         <div style={{ marginBottom: '20px' }}>

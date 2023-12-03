@@ -34,7 +34,7 @@ function App() {
         {/* Add the default route to navigate to /find-home */}
         <Route
           path="/"
-          element={<Navigate to="/find-home" />}
+          element={<Navigate to="/home-evaluation" />}
         />
       </Routes>
     </div>
