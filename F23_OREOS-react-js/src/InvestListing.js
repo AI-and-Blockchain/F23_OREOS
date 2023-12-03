@@ -8,15 +8,15 @@ function InvestListing({ listingData }) {
     <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px' }}>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img
-          src={listingData.primary_photo.href || defaultImageUrl}
+          src={listingData.imageUrl || defaultImageUrl}
           alt="Property"
           style={{ width: '140px', height: '100px', marginRight: '10px' }}
         />
         <div>
           <p style={{ fontSize: '24px', fontWeight: 'bold', margin: '0' }}>
-            {listingData.location.address.line}, {listingData.location.address.city} {listingData.location.address.state}, {listingData.location.address.postal_code}
+            {listingData.details.address}, {listingData.details.city} {listingData.details.state}
           </p>
-          <p style={{ margin: '0' }}>List Price: ${listingData.list_price}</p>
+          <p style={{ margin: '0' }}>List Price: ${listingData.details.listPrice}</p>
         </div>
       </div>
       <ViewButton listingData={listingData} />

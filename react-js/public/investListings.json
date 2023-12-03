@@ -1,0 +1,20 @@
+[
+    {
+      "contractAddress": "0x123abc...",
+      "sharePrice": 100,
+      "imageURL": "https://example.com/image1.jpg",
+      "details": {
+        "address": "123 Main St",
+        "city": "Troy",
+        "state": "NY",
+        "county": "Rensselaer",
+        "listPrice": 500000,
+        "predictedValue": 550000,
+        "sqft": 1000,
+        "lotSqft": 1000,
+        "beds": 2,
+        "baths": 2
+      }
+    }
+    
+  ]

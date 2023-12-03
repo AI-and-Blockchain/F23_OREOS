@@ -1,0 +1,37 @@
+[
+    {
+      "contractAddress": "0x123abc...",
+      "sharePrice": 100,
+      "imageURL": "https://example.com/image1.jpg",
+      "details": {
+        "address": "123 Main St",
+        "city": "Troy",
+        "state": "NY",
+        "county": "Rensselaer",
+        "listPrice": 500000,
+        "predictedValue": 550000,
+        "sqft": 1000,
+        "lotSqft": 1000,
+        "beds": 2,
+        "baths": 2
+      }
+    },
+    {
+      "contractAddress": "0x1a64175B51a33f73bb2DA3487306d9f7ABA8fe41",
+      "imageURL": "https://example.com/image2.jpg",
+      "owner": "0xdec8f1466d7a9e4876d6d8dc60250143c15d3ab9",
+      "details":{ "address": "123 cherry st",
+        "baths":"3",
+        "beds": "3",
+        "city": "Troy",
+        "county": "Rensselaer",
+        "listPrice": "500000",
+        "lotSqft": "5000",
+        "predictedValue": 0,
+        "sqft": "5000",
+        "state": "Ny",
+        "sharePrice": "5"
+      } 
+    }
+    
+  ]

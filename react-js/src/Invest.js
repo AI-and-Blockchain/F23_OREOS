@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import InvestListing from './InvestListing'; // Import the InvestListing component
-import listingsData from './listings.json';
+import listingsData from './investListings.json';
 
 function Invest() {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
 
   const uniqueAddresses = new Set();
-
+  const allProperties =  fetchInvestListings();
+  console.log(allProperties);
   const filteredListings = listingsData.filter((listing) => {
-    if (!uniqueAddresses.has(listing.location.address.line)) {
-      uniqueAddresses.add(listing.location.address.line);
+    if (!uniqueAddresses.has(listing.details.address)) {
+      uniqueAddresses.add(listing.details.address);
       return true;
     }
     return false;
@@ -17,8 +18,8 @@ function Invest() {
 
   const sortedListings = [...filteredListings].sort((a, b) => {
     // Change 'listPrice' to the property you want to sort by
-    const priceA = a.list_price;
-    const priceB = b.list_price;
+    const priceA = a.details.listPrice;
+    const priceB = b.details.listPrice;
 
     if (sortOrder === 'original') return a.id - b.id; // Sort by the original listing id order
 
@@ -59,5 +60,21 @@ function Invest() {
     </div>
   );
 }
+// Helper function to fetch 'investListings' data from localStorage
+const fetchInvestListings = async () => {
+  try {
+    // Retrieve 'investListings' data from localStorage
+    const investListingsData = localStorage.getItem('investListings');
+    
+    // Parse JSON data
+    const jsonData = JSON.parse(investListingsData);
+
+    // Return the data if available, otherwise an empty array
+    return jsonData || [];
+  } catch (error) {
+    console.error('Error fetching investListings data:', error);
+    return [];
+  }
+};
 
 export default Invest;

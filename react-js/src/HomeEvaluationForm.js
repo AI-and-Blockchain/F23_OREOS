@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import Logo from './oreo_logo.png';
+import {  useNavigate } from 'react-router-dom';
+import { useData } from './DataContext';
 
 const HomeEvaluationForm = () => {
+  const { setProperty } = useData();
+  const navigate = useNavigate();
   const [address, setAddress] = useState('');
   const [sqft, setSqft] = useState('');
   const [baths, setBaths] = useState('');
@@ -11,9 +15,11 @@ const HomeEvaluationForm = () => {
   const [state, setState] = useState('');
   const [county, setCounty] = useState('');
   const [city, setCity] = useState('');
-  const [predictedValue, setPredictedValue] = useState(null);
+  const [predictedValue, setPredictedValue] = useState(0);
+  const [isDeployVisible, setDeployVisible] = useState(false);
 
   const handleSubmit = async () => {
+    setDeployVisible(true);
     // Prepare data to send to the server
     const formData = {
       address,
@@ -31,7 +37,7 @@ const HomeEvaluationForm = () => {
       },
     };
 
-    try {
+   /* try {
       // Make API request to the server
       const response = await fetch('/predict', {
         method: 'POST',
@@ -46,9 +52,24 @@ const HomeEvaluationForm = () => {
 
       // Update state with predicted value
       setPredictedValue(data.predictedValue);
+      
     } catch (error) {
       console.error('Error:', error);
+    }*/
+  };
+
+  const handleDeploy = async () => {  
+    // Check if the user is logged into MetaMask
+    const isMetaMaskLoggedIn = true; // Replace with your MetaMask check
+
+    if (isMetaMaskLoggedIn) {
+      setProperty({ address, listPrice, predictedValue, sqft, lotSqft, beds, baths, city, county, state });
+      navigate(`/deploy`);
+    } else {
+      // Handle the case where the user is not logged into MetaMask
+      console.log('User not logged into MetaMask');
     }
+
   };
 
   return (
@@ -143,12 +164,6 @@ const HomeEvaluationForm = () => {
       >
         Evaluate
         </button>
-        {predictedValue !== null && (
-          <div style={{ marginTop: '10px' }}>
-            <h3 style={{ color: 'white', fontWeight: 'bold' }}>Predicted Value:</h3>
-            <p style={{ color: 'white', fontSize: '18px' }}>{predictedValue}</p>
-          </div>
-        )}
       </div>
       <div style={{ paddingTop: '80px', flex: 1, textAlign: 'center' }}>
         {/* Image and 'OREOS Evaluation' text */}
@@ -158,7 +173,20 @@ const HomeEvaluationForm = () => {
           style={{ width: '400px', height: 'auto' }}
         />
         <div style={{ color: 'white', marginTop: '10px' }}>
-          <h2>OREOS Evaluation:  </h2>
+          {predictedValue !== null && (
+          <div style={{ marginTop: '10px' }}>
+            <h3 style={{ color: 'white', fontWeight: 'bold' }}>OREOS Evaluation:</h3>
+            <p style={{ color: 'white', fontSize: '18px' }}>{predictedValue}</p>
+          </div>
+            )}
+          {isDeployVisible && (
+                <button
+                  onClick={handleDeploy}
+                  style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '18px', fontWeight: 'bold', marginTop: '10px' }}
+                >
+                  Deploy
+                </button>
+              )}
         </div>
       </div>
     </div>
