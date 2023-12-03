@@ -15,47 +15,41 @@ const HomeEvaluationForm = () => {
   const [state, setState] = useState('');
   const [county, setCounty] = useState('');
   const [city, setCity] = useState('');
-  const [predictedValue, setPredictedValue] = useState(0);
+  const [predictedValue, setPredictedValue] = useState(null);
   const [isDeployVisible, setDeployVisible] = useState(false);
 
   const handleSubmit = async () => {
     setDeployVisible(true);
     // Prepare data to send to the server
     const formData = {
-      address,
-      numerical_features: {
-        description_sqft: sqft,
+      description_beds: beds,
         description_baths_consolidated: baths,
         description_lot_sqft: lotSqft,
-        description_beds: beds,
-        list_price: listPrice,
-      },
-      categorical_features: {
+        description_sqft: sqft,
         location_address_state: state,
         location_county_name: county,
         location_address_city: city,
-      },
+        description_type: 'single_family'
     };
 
-   /* try {
-      // Make API request to the server
-      const response = await fetch('/predict', {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          "charset": "utf-8"
         },
-        body: JSON.stringify(formData),
-      });
+        body: JSON.stringify(formData),     
+      })
+      if (!response.ok) {
+          throw new Error('Prediction request failed.');
+      }
 
-      // Parse the response
       const data = await response.json();
-
-      // Update state with predicted value
-      setPredictedValue(data.predictedValue);
-      
-    } catch (error) {
+      setPredictedValue(Math.round(data))
+  } catch (error) {
       console.error('Error:', error);
-    }*/
+  }
   };
 
   const handleDeploy = async () => {  
@@ -176,7 +170,9 @@ const HomeEvaluationForm = () => {
           {predictedValue !== null && (
           <div style={{ marginTop: '10px' }}>
             <h3 style={{ color: 'white', fontWeight: 'bold' }}>OREOS Evaluation:</h3>
-            <p style={{ color: 'white', fontSize: '18px' }}>{predictedValue}</p>
+            <p style={{ color: getPredictedPriceColor(listPrice, predictedValue), fontSize: '30px' }}>
+            {Number(predictedValue).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+            </p>
           </div>
             )}
           {isDeployVisible && (
