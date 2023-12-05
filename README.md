@@ -12,6 +12,26 @@ OREO's (Optimization of Real Estate Options and Sales) aims to create a blockcha
 more accessible to a wider range of investors. The platform will allow users to invest in fractions of real estate properties through tokens, enabling fractional ownership 
 and democratizing real estate investment.
 
+
+
+
+## How to Run: ##
+    pull main branch from github:
+    https://github.com/AI-and-Blockchain/F23_OREOS/tree/main
+
+    1. Open Ai backendfolder, 'F23_Oreos/backend/ai':
+      Open python environment and install the 'requirements.txt'
+        In the ai folder, run command 'flask run' to start the server.
+
+    
+    2. Open react-js folder and run:
+        'npm install'
+      Run react-js localhost:
+        'npm start'
+
+    Open web browser and use OREO'S GUI
+
+
 ## Blockchain Component ##
 Asset Tokenization: Blockchain enables fractional ownership of real estate assets through tokenization, making real estate investment more accessible.<br>
 Transparency and Security: Immutable property records on the blockchain ensure transparency and security, reducing the risk of fraud.<br>

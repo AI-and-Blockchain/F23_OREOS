@@ -1,7 +1,6 @@
 [
     {
       "contractAddress": "0x123abc...",
-      "sharePrice": 100,
       "imageURL": "",
       "details": {
         "address": "123 Main St",
@@ -13,6 +12,7 @@
         "sqft": 1000,
         "lotSqft": 1000,
         "beds": 2,
+        "sharePrice": 100,
         "baths": 2
       }
     },
@@ -30,7 +30,7 @@
         "predictedValue": 0,
         "sqft": "5000",
         "state": "Ny",
-        "sharePrice": "5"
+        "sharePrice": 5
       } 
     }
     

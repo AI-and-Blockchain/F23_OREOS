@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import './App.css';
 
 function InvestPropertyView() {
   const { state } = useLocation();
@@ -16,20 +17,43 @@ function InvestPropertyView() {
 
   const listingData = state.listingData;
 
+  const handleBuyShare = async () => {
+    // Implement the logic for buying a share
+    console.log('Buying a share');
+  };
+
+  const handlePlaceBid = async () => {
+    // Implement the logic for placing a bid
+    console.log('Placing a bid');
+  };
+
   return (
-    <div  style={{ marginTop: '0px', padding: '100px' }}>
-      <h2>Property Details</h2>
-      <img src={defaultImageUrl || listingData.imageURl } alt="Property" style={{ width: '400px', height: '280px' }} />
-      <p style={{ fontSize: '28px', fontWeight: 'bold', margin: '0' }}>Address: {listingData.details.address}</p>
-      <p>{listingData.details.city} {listingData.details.state},</p>
-        <p style={{ fontSize: '26px', fontWeight: 'bold', margin: '0' }}>List Price: ${listingData.details.listPrice}</p>
-      <p style={{ fontSize: '24px', fontWeight: 'bold', margin: '0' }}> Details:</p>
-      <p>Beds: {listingData.details.beds} </p>
-      <p>Baths: {listingData.details.baths} </p>
-      <p>Sqft: {listingData.details.sqft} </p>
-      <p>Lot: {listingData.details.lotSqft} </p>
+    <div style={{ marginTop: '0px', padding: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h2>Investment Property Details</h2>
+      <img src={defaultImageUrl || listingData.imageURl} alt="Property" style={{ width: '300px', height: '280px' }} />
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '400px' }}>
+        <div style={{ textAlign: 'left', width: '200px' }}>
+          <p style={{ fontSize: '28px', fontWeight: 'bold', margin: '0' }}>Address: {listingData.details.address}</p>
+          <p>{listingData.details.city} {listingData.details.state},</p>
+          <p style={{ fontSize: '26px', fontWeight: 'bold', margin: '0' }}>List Price: ${listingData.details.listPrice}</p>
+          <p style={{ fontSize: '24px', fontWeight: 'bold', margin: '0' }}> Details:</p>
+          <p>Beds: {listingData.details.beds} </p>
+          <p>Baths: {listingData.details.baths} </p>
+          <p>Sqft: {listingData.details.sqft} </p>
+          <p>Lot: {listingData.details.lotSqft} </p>
+        </div>
+
+        <div style={{ textAlign: 'left', width: '200px' }}>
+          <p style={{ fontSize: '26px', fontWeight: 'bold', margin: '0' }}> Share Price: ${listingData.sharePrice} </p>
+          <div style= {{paddingTop: '20px'}}></div>
+          <button className = "view-button" onClick={handleBuyShare}>Buy a Share</button>
+          <button className = "view-button" onClick={handlePlaceBid}>Place Bid</button>
+        </div>
+      </div>
     </div>
   );
 }
+
 
 export default InvestPropertyView;

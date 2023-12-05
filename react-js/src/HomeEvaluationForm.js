@@ -79,7 +79,24 @@ const HomeEvaluationForm = () => {
             style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
           />
         </div>
-        
+        <div style={{ marginBottom: '20px' }}>
+        <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>List Price:</label>
+        <input
+          type="number"
+          value={listPrice}
+          onChange={(e) => setListPrice(e.target.value)}
+          style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
+        />
+      </div> 
+      <div style={{ marginBottom: '20px' }}>
+        <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>Lot Sqft:</label>
+        <input
+          type="number"
+          value={lotSqft}
+          onChange={(e) => setLotSqft(e.target.value)}
+          style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
+        />
+      </div>
       <div style={{ marginBottom: '20px' }}>
         <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>Sqft:</label>
         <input
@@ -99,29 +116,11 @@ const HomeEvaluationForm = () => {
         />
       </div>
       <div style={{ marginBottom: '20px' }}>
-        <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>Lot Sqft:</label>
-        <input
-          type="number"
-          value={lotSqft}
-          onChange={(e) => setLotSqft(e.target.value)}
-          style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
-        />
-      </div>
-      <div style={{ marginBottom: '20px' }}>
         <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>Beds:</label>
         <input
           type="number"
           value={beds}
           onChange={(e) => setBeds(e.target.value)}
-          style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
-        />
-      </div>
-      <div style={{ marginBottom: '20px' }}>
-        <label style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>List Price:</label>
-        <input
-          type="number"
-          value={listPrice}
-          onChange={(e) => setListPrice(e.target.value)}
           style={{ backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', fontSize: '16px' }}
         />
       </div>
@@ -159,7 +158,7 @@ const HomeEvaluationForm = () => {
         Evaluate
         </button>
       </div>
-      <div style={{ paddingTop: '80px', flex: 1, textAlign: 'center' }}>
+      <div style={{ paddingTop: '150px', flex: 1, textAlign: 'center' }}>
         {/* Image and 'OREOS Evaluation' text */}
         <img
           src={Logo}

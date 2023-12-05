@@ -16,7 +16,7 @@ function InvestListing({ listingData }) {
           <p style={{ fontSize: '24px', fontWeight: 'bold', margin: '0' }}>
             {listingData.details.address}, {listingData.details.city} {listingData.details.state}
           </p>
-          <p style={{ margin: '0' }}>List Price: ${listingData.details.listPrice}</p>
+          <p style={{ margin: '0' }}>Share Price: ${listingData.sharePrice}</p>
         </div>
       </div>
       <InvestViewButton listingData={listingData} />
