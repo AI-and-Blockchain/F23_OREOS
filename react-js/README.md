@@ -19,6 +19,9 @@ How to run:
       Run react-js localhost:
         'npm start'
 
+    To run the ML server, navigate to the backend directory and install Flask dependencies: 
+    python3 predict.py
+
     Open web browser and use OREO'S GUI
 
 Find a Home Page
