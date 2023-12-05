@@ -19,7 +19,7 @@ and democratizing real estate investment.
     pull main branch from github:
     https://github.com/AI-and-Blockchain/F23_OREOS/tree/main
 
-    1. Open Ai backendfolder, 'F23_Oreos/backend/ai':
+    1. Open Ai backendfolder, '[F23_Oreos/backend/ai](https://github.com/AI-and-Blockchain/F23_OREOS/tree/main/backend/ai)':
       Open python environment and install the 'requirements.txt'
         In the ai folder, run command 'flask run' to start the server.
 
